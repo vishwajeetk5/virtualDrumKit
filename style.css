@@ -1,0 +1,107 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#drum_set_image {
+  mix-blend-mode: multiply;
+}
+
+button {
+  font-family: cursive;
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 15px 25px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 8px solid rgb(155, 151, 151);
+  box-shadow: 4px 4px 0 rgb(59, 64, 68);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+button:active {
+  transform: translateX(4px) translateY(4px);
+  box-shadow: 0 0 0 rgb(121, 190, 240);
+}
+
+.w{
+  background-image: url(images/kickbass.png);
+}
+.d{
+  background-image: url(images/ridecymbal.png);
+}
+.a{
+  background-image: url();
+}
+.k{
+  background-image: url(images/hihat.png);
+}
+.l{
+  background-image: url(images/cymbal.png);
+}
+
+img {
+  width: inherit;
+}
+.drumset {
+  width: 550px;
+  display: flex;
+  justify-content: center;
+}
+
+.stick-container {
+  margin: 0;
+  padding: 0;
+}
+
+#sticktoride {
+  z-index: 2000;
+  width: 160px;
+  position: relative;
+  bottom: 390px;
+  left: 60px;
+  transform: rotate(-30deg);
+  animation-name: toride;
+  animation-duration: 0.2s;
+}
+
+@keyframes toride {
+  0% {
+    transform: rotate(-25deg);
+  }
+  25% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* #sticktoride{
+  z-index:2000;
+  width: 160px;
+  position:relative;
+  bottom: 390px;
+  left:60px;
+  transform:rotate(-20deg);
+  animation-name: tohihat;
+  animation-duration: 0.2s;
+}
+
+@keyframes torhihat {
+  0%   {transform:rotate(-18deg);}
+  25%  {transform:rotate(-12deg);}
+  50%  {transform:rotate(-8deg);}
+  100% {transform:rotate(-4deg);}
+} */

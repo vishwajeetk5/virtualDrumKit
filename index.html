@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Events</title>
+  </head>
+  <body>
+    <h1>Virtual Drum Kit</h1>
+    <div class="drumset">
+      <img src="images/drumSetImages.jpg" alt="drumSetImage" usemap="#drumMap" id="drum_set_image">
+    </div>
+    <map name="drumMap">
+      <area shape="circle" coords="238,349,75" alt="" id="bass">
+<area shape="rect" coords="300,234,413,265" alt="" id="floor">
+<area shape="rect" coords="100,235,211,269" alt="" id="snare">
+<area shape="rect" coords="337,150,480,190" alt="" id="ride">
+<area shape="rect" coords="246,175,341,210" alt="" id="low">
+<area shape="rect" coords="163,175,240,210" alt="" id="high">
+<area shape="rect" coords="0,176,111,197" alt="" id="hihat">
+<area shape="rect" coords="69,86,185,117" alt="" id="crash">
+      
+    </map>
+
+    <div id="stick-container">
+      <img src="images/drum-sticks.png" alt="drum stick" id="sticktoride">
+      
+    </div>
+    
+    <section class="set">
+      <button class="w drumbtn">W</button>
+      <button class="a drumbtn">A</button>
+      <button class="s drumbtn">S</button>
+      <button class="d drumbtn">D</button>
+      <button class="f drumbtn">F</button>
+      <button class="g drumbtn">G</button>
+      <button class="k drumbtn">K</button>
+      <button class="l drumbtn">L</button>
+    </section >
+    <script src="index.js"></script>
+  </body>
+</html>
+<!-- onclick="show_coords(event) "  -->
