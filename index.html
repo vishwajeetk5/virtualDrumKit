@@ -5,55 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>Events</title>
-  <style>
-    .tips {
-      z-index:10;
-      background-color: #80d87d;
-      color:black;
-      height: fit-content;
-      border-radius: 5px;
-      position: relative;
-      font-size: 15px;
-      pointer-events: none;
-    }
+  <title>Vadya-Mridung</title>
 
-    #wtp {
-      top: 160px;
-      right: 330px;
-    }
-    #atp{
-      top: 60px;
-      right: 210px;
-    }
-    #stp{
-      top: 30px;
-      right: 420px;
-    }
-    #dtp{
-      bottom: 110px;
-      right: 160px;
-    }
-    #ftp{
-      bottom: 110px;
-      right: 280px;
-    }
-    #jtp{
-      bottom: 150px;
-      right: 370px;
-    }
-    #ktp{
-      bottom:210px;
-      right: 510px;
-    }
-    #ltp{
-      bottom: 310px;
-      right: 440px;
-    }
-    .Hidetips{
-      opacity: 0;
-    }
-  </style>
 </head>
 
 <body>
@@ -100,20 +53,7 @@
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="index.js"></script>
-  <script>
-    $(document).ready(function () {
-      var flag=0;
-   $("#ShortcutBtn").click(()=>{
-    $(".TipDiv").toggleClass("Hidetips")
-    if(flag==0){ $("#ShortcutBtn").text("Show Shortcuts");
-    flag++}
-    else{
-      $("#ShortcutBtn").text("Hide Shortcuts");
-      flag=0;
-    }
-   })
-    });
-  </script>
+
 </body>
 
 </html>
