@@ -1,9 +1,9 @@
 $(document).ready(function () {
-  const musicSequence = [0, 2,2,2, 4, 7, 5, 4, 3, 1, 6, 8, 5, 4,5,4,5,4, 2, 0,3,3,3,3,3,3,3,6];
+  // const musicSequence = [0, 2,2,2, 4, 7, 5, 4, 3, 1, 6, 8, 5, 4,5,4,5,4, 2, 0,3,3,3,3,3,3,3,6];
   
-  // const musicSequence =  [
-  //   3,6,3,6,3,6,4,4,4,4,6,1,1,1,1,6,5,5,5,5,5,6,6,6,7
-  // ];
+  const musicSequence =  [
+    3,6,3,6,3,6,4,4,4,4,6,1,1,1,1,6,5,5,5,5,5,6,6,6,7
+  ];
   //to play complete sequence
   function playMusic() {
     console.log("playing sequence")
@@ -74,6 +74,16 @@ $(document).ready(function () {
     const keysd = ["w", "a", "s", "d", "f", "j", "k", "l"];
     return keysd.indexOf(key);
   }
+  var flag=0;
+  $("#ShortcutBtn").click(()=>{
+   $(".TipDiv").toggleClass("Hidetips")
+   if(flag==0){ $("#ShortcutBtn").text("Show Shortcuts");
+   flag++}
+   else{
+     $("#ShortcutBtn").text("Hide Shortcuts");
+     flag=0;
+   }
+  })
 });
 
 // const drumbtn = document.querySelectorAll("button");
