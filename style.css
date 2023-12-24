@@ -3,7 +3,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  user-select:none;
+  user-select: none;
+  background-color: rgb(214, 243, 243);
 }
 
 section {
@@ -12,11 +13,8 @@ section {
   align-items: center;
   flex-wrap: wrap;
 }
-#drum_set_image {
-  mix-blend-mode: multiply;
-}
 
-button {
+.drumbtn {
   font-family: cursive;
   color: rgb(0, 0, 0);
   font-size: 2rem;
@@ -27,46 +25,99 @@ button {
   border: 8px solid rgb(155, 151, 151);
   box-shadow: 4px 4px 0 rgb(59, 64, 68);
   transition: transform 0.2s, box-shadow 0.2s;
+  cursor:pointer;
 }
-button:active {
+
+.drumbtn:active {
   transform: translateX(4px) translateY(4px);
   box-shadow: 0 0 0 rgb(121, 190, 240);
 }
 
-.w{
+.w {
   background-image: url(images/kickbass.png);
 }
-.d{
+
+.d {
   background-image: url(images/ridecymbal.png);
 }
-.a{
-  background-image: url();
+
+.a {
+  background-image: url(images/);
 }
-.k{
+
+.k {
   background-image: url(images/hihat.png);
 }
-.l{
+
+.l {
   background-image: url(images/cymbal.png);
 }
 
 img {
   width: inherit;
+  cursor:pointer;
 }
-.drumset {
+area{
+  cursor:pointer;
+}
+area[title]::before {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0s;
+}
+
+/* Show the tooltip on hover */
+area[title]:hover::before {
+  opacity: 1;
+}
+
+#drumset {
+  border:2px black solid;
   width: 550px;
+  position: relative;
+  left:0px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+#drum_set_image{
+  mix-blend-mode: multiply;
+  opacity:1;
+  width: 550px;
+min-width :550px;
 }
 
 .stick-container {
+  pointer-events: none;
   margin: 0;
   padding: 0;
 }
 
-#sticktoride {
-  z-index: 2000;
+.drumstick {
+  pointer-events: none;
+  z-index: 10;
   width: 160px;
   position: relative;
+}
+
+#neutral {
+  bottom: 440px;
+  right: 25px;
+  transform: rotate(-90deg);
+  animation-name: fun;
+  animation-duration: 0.2s;
+}
+
+#sticktoride {
   bottom: 390px;
   left: 60px;
   transform: rotate(-30deg);
@@ -74,35 +125,140 @@ img {
   animation-duration: 0.2s;
 }
 
+#sticktolow {
+  bottom: 300px;
+  left: 0px;
+  transform: rotate(-80deg);
+  animation-name: tolow;
+  animation-duration: 0.2s;
+}
+
+#sticktohigh {
+  bottom: 300px;
+  right: 40px;
+  transform: rotate(-100deg);
+  animation-name: tohigh;
+  animation-duration: 0.2s;
+}
+
+#sticktohithat {
+  bottom: 340px;
+  right: 110px;
+  transform: rotate(-150deg);
+  animation-name: tohit;
+  animation-duration: 0.2s;
+}
+
+#sticktosnare {
+  bottom: 280px;
+  right: 50px;
+  transform: rotate(-150deg);
+  animation-name: tohit;
+  animation-duration: 0.2s;
+}
+
+#sticktofloor {
+  bottom: 290px;
+  right: 1px;
+  transform: rotate(-30deg);
+  animation-name: toride;
+  animation-duration: 0.2s;
+}
+
+#sticktocrash {
+  bottom: 420px;
+  right: 40px;
+  transform: rotate(-150deg);
+  animation-name: tohit;
+  animation-duration: 0.2s;
+}
+
+@keyframes fun {
+  0% {
+    transform: rotate(-90deg);
+  }
+
+  25% {
+    transform: rotate(-180deg);
+  }
+
+  50% {
+    transform: rotate(-270deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 @keyframes toride {
   0% {
     transform: rotate(-25deg);
   }
+
   25% {
     transform: rotate(-20deg);
   }
+
   50% {
     transform: rotate(-15deg);
   }
+
   100% {
     transform: rotate(-10deg);
   }
 }
 
-/* #sticktoride{
-  z-index:2000;
-  width: 160px;
-  position:relative;
-  bottom: 390px;
-  left:60px;
-  transform:rotate(-20deg);
-  animation-name: tohihat;
-  animation-duration: 0.2s;
+@keyframes tolow {
+  0% {
+    transform: rotate(-75deg);
+  }
+
+  25% {
+    transform: rotate(-70deg);
+  }
+
+  50% {
+    transform: rotate(-65deg);
+  }
+
+  100% {
+    transform: rotate(-60deg);
+  }
 }
 
-@keyframes torhihat {
-  0%   {transform:rotate(-18deg);}
-  25%  {transform:rotate(-12deg);}
-  50%  {transform:rotate(-8deg);}
-  100% {transform:rotate(-4deg);}
-} */
+@keyframes tohigh {
+  0% {
+    transform: rotate(-105deg);
+  }
+
+  25% {
+    transform: rotate(-110deg);
+  }
+
+  50% {
+    transform: rotate(-115deg);
+  }
+
+  100% {
+    transform: rotate(-120deg);
+  }
+}
+
+@keyframes tohit {
+  0% {
+    transform: rotate(-145deg);
+  }
+
+  25% {
+    transform: rotate(-140deg);
+  }
+
+  50% {
+    transform: rotate(-135deg);
+  }
+
+  100% {
+    transform: rotate(-130deg);
+  }
+}
