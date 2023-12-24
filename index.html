@@ -1,45 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="google-site-verification" content="0lWWu4Gtpis7tnUexaebz2N901m9XB9GtpX0kSIySPo" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Virtual Drum Kit</title>
-  </head>
-  <body>
-    <h1>Virtual Drum Kit</h1>
-    <div class="drumset">
-      <img src="images/drumSetImages.jpg" alt="drumSetImage" usemap="#drumMap" id="drum_set_image">
-    </div>
-    <map name="drumMap">
-      <area shape="circle" coords="238,349,75" alt="" id="bass">
-<area shape="rect" coords="300,234,413,265" alt="" id="floor">
-<area shape="rect" coords="100,235,211,269" alt="" id="snare">
-<area shape="rect" coords="337,150,480,190" alt="" id="ride">
-<area shape="rect" coords="246,175,341,210" alt="" id="low">
-<area shape="rect" coords="163,175,240,210" alt="" id="high">
-<area shape="rect" coords="0,176,111,197" alt="" id="hihat">
-<area shape="rect" coords="69,86,185,117" alt="" id="crash">
-      
-    </map>
 
-    <div id="stick-container">
-      <img src="images/drum-sticks.png" alt="drum stick" id="sticktoride">
-      
-    </div>
-    
-    <section class="set">
-      <button class="w drumbtn">W</button>
-      <button class="a drumbtn">A</button>
-      <button class="s drumbtn">S</button>
-      <button class="d drumbtn">D</button>
-      <button class="f drumbtn">F</button>
-      <button class="g drumbtn">G</button>
-      <button class="k drumbtn">K</button>
-      <button class="l drumbtn">L</button>
-    </section >
-    <script src="index.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Events</title>
+  <style>
+    .tips {
+      z-index:10;
+      background-color: #80d87d;
+      color:black;
+      height: fit-content;
+      border-radius: 5px;
+      position: relative;
+      font-size: 15px;
+      pointer-events: none;
+    }
+
+    #wtp {
+      top: 160px;
+      right: 330px;
+    }
+    #atp{
+      top: 60px;
+      right: 210px;
+    }
+    #stp{
+      top: 30px;
+      right: 420px;
+    }
+    #dtp{
+      bottom: 110px;
+      right: 160px;
+    }
+    #ftp{
+      bottom: 110px;
+      right: 280px;
+    }
+    #jtp{
+      bottom: 150px;
+      right: 370px;
+    }
+    #ktp{
+      bottom:210px;
+      right: 510px;
+    }
+    #ltp{
+      bottom: 310px;
+      right: 440px;
+    }
+    .Hidetips{
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Virtual Drum Kit</h1>
+  <button id="ShortcutBtn">Show Shortcuts</button>
+  <div id="drumset">
+    <img src="images/drumSetImages.jpg" alt="drumSetImage" usemap="#drumMap" id="drum_set_image">
+  
+    <div class="TipDiv">
+      <h3 id="wtp" class="tips">0.W</h3>
+      <h3 id="atp" class="tips">1.A</h3>
+      <h3 id="stp" class="tips">2.S</h3>
+      <h3 id="dtp" class="tips">3.D</h3>
+      <h3 id="ftp" class="tips">4.F</h3>
+      <h3 id="jtp" class="tips">5.J</h3>
+      <h3 id="ktp" class="tips">6.K</h3>
+      <h3 id="ltp" class="tips">7.L</h3>
+    </div></div>
+
+
+  <map name="drumMap">
+    <area shape="circle" coords="238,349,75" alt="" id="bass" title="0.W.Kick Bass">
+    <area shape="rect" coords="300,234,413,265" alt="" id="floor" title="1.A.Floor Tom">
+    <area shape="rect" coords="100,235,211,269" alt="" id="snare" title="2.S.Snare Drum">
+    <area shape="rect" coords="337,150,480,190" alt="" id="ride" title="3.D.Ride Cymbal">
+    <area shape="rect" coords="246,175,341,210" alt="" id="low" title="4.F.Tom Low">
+    <area shape="rect" coords="163,175,240,210" alt="" id="high" title="5.J.Tom High">
+    <area shape="rect" coords="0,176,111,197" alt="" id="hihat" title="6.K.Hi-Hat">
+    <area shape="rect" coords="69,86,185,117" alt="" id="crash" title="7.L.Crash Cymbal">
+  </map>
+
+  <div id="stick-container">
+  </div>
+
+  <section class="set">
+    <button class="w drumbtn">W</button>
+    <button class="a drumbtn">A</button>
+    <button class="s drumbtn">S</button>
+    <button class="d drumbtn">D</button>
+    <button class="f drumbtn">F</button>
+    <button class="g drumbtn">J</button>
+    <button class="k drumbtn">K</button>
+    <button class="l drumbtn">L</button>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+  <script>
+    $(document).ready(function () {
+      var flag=0;
+   $("#ShortcutBtn").click(()=>{
+    $(".TipDiv").toggleClass("Hidetips")
+    if(flag==0){ $("#ShortcutBtn").text("Show Shortcuts");
+    flag++}
+    else{
+      $("#ShortcutBtn").text("Hide Shortcuts");
+      flag=0;
+    }
+   })
+    });
+  </script>
+</body>
+
 </html>
 <!-- onclick="show_coords(event) "  -->
