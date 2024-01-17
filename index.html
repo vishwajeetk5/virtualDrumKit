@@ -5,8 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>Vadya-Mridung</title>
-
+  <link rel="stylesheet" href="fullsrc/fullscreen.css">
+  <link rel="stylesheet" href="star.css">
+  <script src="https://kit.fontawesome.com/94a53be600.js" crossorigin="anonymous"></script>
+  <script src="star.js"></script>
+<title>Vadya-Mridung</title>
 </head>
 
 <body>
@@ -15,7 +18,7 @@
   <div id="drumset">
     <img src="images/drumSetImages.jpg" alt="drumSetImage" usemap="#drumMap" id="drum_set_image">
   
-    <div class="TipDiv">
+    <div class="TipDiv" class="Hidetips">
       <h3 id="wtp" class="tips">0.W</h3>
       <h3 id="atp" class="tips">1.A</h3>
       <h3 id="stp" class="tips">2.S</h3>
@@ -51,10 +54,27 @@
     <button class="k drumbtn">K</button>
     <button class="l drumbtn">L</button>
   </section>
+  <button class="js-toggle-fullscreen-btn toggle-fullscreen-btn" aria-label="Enter fullscreen mode" hidden>
+    <svg class="toggle-fullscreen-svg" width="28" height="28" viewBox="-2 -2 28 28">
+      <g class="icon-fullscreen-enter">
+        <path d="M 2 9 v -7 h 7" />
+        <path d="M 22 9 v -7 h -7" />
+        <path d="M 22 15 v 7 h -7" />
+        <path d="M 2 15 v 7 h 7" />
+      </g>
+      
+      <g class="icon-fullscreen-leave">
+        <path d="M 24 17 h -7 v 7" />
+        <path d="M 0 17 h 7 v 7" />
+        <path d="M 0 7 h 7 v -7" />
+        <path d="M 24 7 h -7 v -7" />
+      </g>
+    </svg>
+  </button>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="index.js"></script>
-
+  <script src="fullsrc/fullscreen.js"></script>
 </body>
 
 </html>
-<!-- onclick="show_coords(event) "  -->
+<!-- onclick="show_coords(event) "  --> 

@@ -52,7 +52,10 @@ section {
 .l {
   background-image: url(images/cymbal.png);
 }
-
+#ShortcutBtn{
+  padding:5px;
+  cursor: pointer;
+}
 .tips {
   z-index: 10;
   background-color: #80d87d;
@@ -138,7 +141,7 @@ area[title]:hover::before {
 }
 
 #drumset {
-  border: 2px black solid;
+  /* border: 2px black solid; */
   width: 550px;
   position: relative;
   left: 0px;
