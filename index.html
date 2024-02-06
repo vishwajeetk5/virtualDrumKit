@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fullsrc/fullscreen.css">
+  <link rel="stylesheet" href="star.css">
+  <script src="https://kit.fontawesome.com/94a53be600.js" crossorigin="anonymous"></script>
+  <script src="star.js"></script>
+<title>Vadya-Mridung</title>
+</head>
+
+<body>
+  <h1>Virtual Drum Kit</h1>
+  <button id="ShortcutBtn">Show Shortcuts</button>
+  <div id="drumset">
+    <img src="images/drumSetImages.jpg" alt="drumSetImage" usemap="#drumMap" id="drum_set_image">
+  
+    <div class="TipDiv" class="Hidetips">
+      <h3 id="wtp" class="tips">0.W</h3>
+      <h3 id="atp" class="tips">1.A</h3>
+      <h3 id="stp" class="tips">2.S</h3>
+      <h3 id="dtp" class="tips">3.D</h3>
+      <h3 id="ftp" class="tips">4.F</h3>
+      <h3 id="jtp" class="tips">5.J</h3>
+      <h3 id="ktp" class="tips">6.K</h3>
+      <h3 id="ltp" class="tips">7.L</h3>
+    </div></div>
+
+
+  <map name="drumMap">
+    <area shape="circle" coords="238,349,75" alt="" id="bass" title="0.W.Kick Bass">
+    <area shape="rect" coords="300,234,413,265" alt="" id="floor" title="1.A.Floor Tom">
+    <area shape="rect" coords="100,235,211,269" alt="" id="snare" title="2.S.Snare Drum">
+    <area shape="rect" coords="337,150,480,190" alt="" id="ride" title="3.D.Ride Cymbal">
+    <area shape="rect" coords="246,175,341,210" alt="" id="low" title="4.F.Tom Low">
+    <area shape="rect" coords="163,175,240,210" alt="" id="high" title="5.J.Tom High">
+    <area shape="rect" coords="0,176,111,197" alt="" id="hihat" title="6.K.Hi-Hat">
+    <area shape="rect" coords="69,86,185,117" alt="" id="crash" title="7.L.Crash Cymbal">
+  </map>
+
+  <div id="stick-container">
+  </div>
+
+  <section class="set">
+    <button class="w drumbtn">W</button>
+    <button class="a drumbtn">A</button>
+    <button class="s drumbtn">S</button>
+    <button class="d drumbtn">D</button>
+    <button class="f drumbtn">F</button>
+    <button class="g drumbtn">J</button>
+    <button class="k drumbtn">K</button>
+    <button class="l drumbtn">L</button>
+  </section>
+  <button class="js-toggle-fullscreen-btn toggle-fullscreen-btn" aria-label="Enter fullscreen mode" hidden>
+    <svg class="toggle-fullscreen-svg" width="28" height="28" viewBox="-2 -2 28 28">
+      <g class="icon-fullscreen-enter">
+        <path d="M 2 9 v -7 h 7" />
+        <path d="M 22 9 v -7 h -7" />
+        <path d="M 22 15 v 7 h -7" />
+        <path d="M 2 15 v 7 h 7" />
+      </g>
+      
+      <g class="icon-fullscreen-leave">
+        <path d="M 24 17 h -7 v 7" />
+        <path d="M 0 17 h 7 v 7" />
+        <path d="M 0 7 h 7 v -7" />
+        <path d="M 24 7 h -7 v -7" />
+      </g>
+    </svg>
+  </button>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+  <script src="fullsrc/fullscreen.js"></script>
+</body>
+
+</html>
+<!-- onclick="show_coords(event) "  --> 
